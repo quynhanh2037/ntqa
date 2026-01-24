@@ -1,0 +1,79 @@
+#1 Zander length
+limit_size = 42
+zander_length = float(input("Enetr the length of the zander: "))
+if zander_length < limit_size: 
+    print("The zander is", format(limit_size - zander_length,".2f"), "centimeter(s) smaller than the required length. Please release the fish back to the lake !" )
+else:
+    print("Congrats!")
+
+#2 Cabin
+cabin = input("Enter cabin class (LUX, A, B, or C): ").upper()
+
+if cabin == "LUX":
+    print("Upper-deck cabin with a balcony")
+elif cabin == "A":
+    print("Above the car deck, equipped with a window")
+elif cabin == "B":
+    print("Windowless cabin above the car deck")
+elif cabin == "C":
+    print("Windowless cabin below the car deck")
+else:
+    print("Invalid cabin class")
+
+#3 Biological sex & Hemoglobin value
+sex = input("Enter biological sex (female or male): ").lower()
+hemoglobin = float(input("Enter hemoglobin value (g/l): "))
+
+if sex == "female":
+    if hemoglobin < 117:
+        print("Hemoglobin level is low")
+    elif hemoglobin > 155:
+        print("Hemoglobin level is high")
+    else:
+        print("Hemoglobin level is normal")
+
+elif sex == "male":
+    if hemoglobin < 134:
+        print("Hemoglobin level is low")
+    elif hemoglobin > 167:
+        print("Hemoglobin level is high")
+    else:
+        print("Hemoglobin level is normal")
+
+else:
+    print("Invalid sex entered")
+
+#4 Leap year
+year = int(input("Enter a year: "))
+
+if year % 400 == 0:
+    print("The year is a leap year")
+elif year % 100 == 0:
+    print("The year is not a leap year")
+elif year % 4 == 0:
+    print("The year is a leap year")
+else:
+    print("The year is not a leap year")
+
+#5 Pizza
+import math
+def pizza_unit_price(diameter_cm, price):
+    radius_m = (diameter_cm / 2) / 100
+    area = math.pi * radius_m ** 2
+    unit_price = price / area
+    return unit_price
+d1 = float(input("Enter diameter of pizza 1 (cm): "))
+p1 = float(input("Enter price of pizza 1 (USD): "))
+
+d2 = float(input("Enter diameter of pizza 2 (cm): "))
+p2 = float(input("Enter price of pizza 2 (USD): "))
+
+price1 = pizza_unit_price(d1, p1)
+price2 = pizza_unit_price(d2, p2)
+
+if price1 < price2:
+    print("Pizza 1 provides better value for money")
+elif price2 < price1:
+    print("Pizza 2 provides better value for money")
+else:
+    print("Both pizzas have the same value for money")
