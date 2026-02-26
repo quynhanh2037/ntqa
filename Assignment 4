@@ -1,0 +1,58 @@
+#Prime Numbers
+number = int(input("Enter an integer: "))
+if number <= 1:
+    print("Not prime")
+else:
+    prime = True
+    for i in range(2, number):
+        if number % i == 0:
+            prime = False
+    if prime:
+        print("Prime number")
+    else:
+        print("Not prime")
+
+#Greatest Numbers
+numbers = []
+while True:
+    numbers_list = input("Enter a number (press Enter as empty to stop): ")
+    if numbers_list == "":
+        break
+    num = float(numbers_list)
+    numbers.append(num)
+numbers.sort(reverse=True)
+top_five = numbers[:5]
+print("Five greatest numbers:", top_five)
+
+#Cities
+cities = []
+for i in range(5):
+    name = input("Enter a city name: ")
+    cities.append(name)
+print("Cities you entered:")
+for city in cities:
+    print(city)
+
+#Sum A List
+def sum_list(numbers):
+    total = 0
+    for num in numbers:
+        total += num
+    return total
+
+my_list = [1, 2, 3, 4, 5] #test
+result = sum_list(my_list)
+print("Sum =", result)
+
+#Keep Even Numbers
+def keep_even(numbers):
+    even_list = []
+    for num in numbers:
+        if num % 2 == 0:
+            even_list.append(num)
+    return even_list
+
+my_list = [1, 2, 3, 4, 5, 6, 7] #test
+new_list = remove_odd(my_list)
+print("Original list:", my_list)
+print("Even numbers:", new_list)
