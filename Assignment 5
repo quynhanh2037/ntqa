@@ -1,0 +1,51 @@
+#Course Code
+import re
+def course_code(code):
+    format = r'^[A-Z]{2,3}[0-9]{3}$'
+    if re.match(format, code):
+        return True
+    else:
+        return False
+print(course_code("TEC001")) #test
+
+#Hex Color
+import re
+def hex_color(color):
+    pattern = r'^#[0-9A-Fa-f]{6}$'
+    if re.match(pattern, color):
+        return True
+    else:
+        return False
+print(hex_color("#8FB6D8")) #test
+
+#Sum of Numbers in Paragraph
+import re
+def sum_numbers(text):
+    numbers = re.find_numbers(r'\d+', text)
+    total = 0
+    for num in numbers:
+        total += int(num)
+    return total
+text = "Today is January 16, 2025. The temperature is 11 degrees Celsius."
+print(sum_numbers(text)) # test
+
+#Hide Phone Numbers
+import re
+def hide(text):
+    pattern = r'(\+84\d+|\b\d{10}\b)'
+    result = re.sub(pattern, "[REDACTED]", text)
+    return result
+text = "Nguyen Thi Quynh Anh's phone number: +84943832007"
+print(hide(text)) #test
+
+#Points to Pi
+import random
+point = int(input("How many random points??: "))
+inside_circle = 0
+for i in range(point):
+    x = random.uniform(-1, 1)
+    y = random.uniform(-1, 1)
+    if x*x + y*y < 1:
+        inside_circle += 1
+pi = 4 * inside_circle / point
+print("The approximation of pi:", pi)
