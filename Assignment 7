@@ -65,3 +65,6 @@ print(f"{'Reg Number':<10} {'Max Speed':<10} {'Speed':<10} {'Distance':<10}")
 
 for car in cars:
     print(f"{car.registration_number:<10} {car.max_speed:<10} {car.current_speed:<10} {car.travelled_distance:.2f}")
+
+#5
+https://github.com/quynhanh2037/ntqa/blob/main/%235-Assignment7.txt
